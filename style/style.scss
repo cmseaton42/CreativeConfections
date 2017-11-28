@@ -1,5 +1,7 @@
+@import "./global/_colors.scss";
+@import "./global/_fonts.scss";
 * {
-    font-family: sans-serif;
+    font-family: $ff-primary;
 }
 
 html,

@@ -1,0 +1,17 @@
+@import "../global/_colors.scss";
+@import "../global/_fonts.scss";
+.cmpnt-signature {
+    #signature-svg {
+        width: 900px;
+        height: 300px;
+        text {
+            text-anchor: middle;
+            transform: translate(450px, 150px);
+            stroke: none;
+            font-weight: 100;
+            font-size: 90px;
+            fill: $color-primary;
+            font-family: $ff-dancingScript;
+        }
+    }
+}

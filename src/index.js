@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "../style/vendor/animate/animate.min.scss";
 import "../style/style.scss";
 
+import Signature from "./components/signature";
+
 const App = () => {
     // <img src="https://media.giphy.com/media/xUOxffodU10EVeDwcg/giphy.gif" />
     //         <img src="https://media.giphy.com/media/xUOxeWWsAqUbGWrcPK/giphy.gif" />
@@ -11,9 +13,7 @@ const App = () => {
 
     return (
         <div>
-            <h1>
-                ALL APPEARS TO BE <strong>GOOD</strong>
-            </h1>
+            <Signature />
         </div>
     );
 };
