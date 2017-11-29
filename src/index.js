@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "../style/vendor/animate/animate.min.scss";
 import "../style/style.scss";
 
-import Signature from "./components/signature";
+import Navbar from "./components/navbar";
 
 const App = () => {
     // <img src="https://media.giphy.com/media/xUOxffodU10EVeDwcg/giphy.gif" />
@@ -12,9 +13,9 @@ const App = () => {
     //         <img src="https://media.giphy.com/media/xUOxf7hN5NIATS3wgU/giphy.gif" />
 
     return (
-        <div>
-            <Signature />
-        </div>
+        <Router>
+            <Navbar />
+        </Router>
     );
 };
 

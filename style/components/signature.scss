@@ -2,37 +2,47 @@
 @import "../global/_fonts.scss";
 .cmpnt-signature {
     #signature-svg {
-        width: 140px;
-        height: 130px;
-
+        width: 150px;
+        height: 70px;
+        padding: 0;
         text {
             text-anchor: middle;
             stroke: none;
-            font-weight: 100;
+            font-weight: 500;
             fill: $color-primary;
             font-family: $ff-tangerine;
         }
         .signature- {
             &C1 {
-                font-size: 100px;
-                transform: translate(30px, 70px);
-                font-weight: 100;
+                font-size: 50px;
+                transform: translate(17px, 40px);
             }
             &C2 {
-                font-size: 100px;
-                transform: translate(50px, 117px);
-                font-weight: 100;
+                font-size: 50px;
+                transform: translate(55px, 65px);
             }
             &reative {
-                font-size: 30px;
-                transform: translate(60px, 47px);
+                font-size: 40px;
+                transform: translate(55px, 30px);
                 fill: $color-secondary;
             }
             &onfections {
-                font-size: 30px;
-                transform: translate(90px, 94px);
+                font-size: 40px;
+                transform: translate(105px, 55px);
                 fill: $color-secondary;
             }
         }
+    }
+}
+
+.fill- {
+    &secondary {
+        fill: $color-secondary;
+    }
+    &secondary-tint {
+        fill: $color-secondary-tint;
+    }
+    &primary {
+        fill: $color-primary;
     }
 }
