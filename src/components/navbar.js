@@ -12,18 +12,12 @@ export default class Navbar extends Component {
         this.state = {
             navListItems: [
                 { name: "Home", route: "/" },
-                { name: "Portfolio", route: "#" },
-                { name: "Contact", route: "#" }
-            ],
-            Active: ""
+                { name: "Portfolio", route: "/Portfolio" },
+                { name: "Contact", route: "/Contact" }
+            ]
         };
 
-        this.setActiveListItem = this.setActiveListItem.bind(this);
         this.renderNavListItems = this.renderNavListItems.bind(this);
-    }
-
-    setActiveListItem(Active) {
-        this.setState({ Active });
     }
 
     renderNavListItems() {
@@ -33,10 +27,11 @@ export default class Navbar extends Component {
             const { name, route } = listItem;
 
             return (
-                <li className={`nav-item ${Active === name ? "active" : ""}`}>
+                <li key={name} className="nav-item">
                     <NavLink
+                        exact={name === "Home" ? true : false}
                         className="nav-link"
-                        isActive={() => this.setActiveListItem(name)}
+                        activeClassName="nav-link-active"
                         to={route}
                     >
                         {name}
@@ -49,27 +44,16 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                    <Link className="navbar-brand" to="/">
-                        <Signature />
-                    </Link>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon" />
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                <div className="navbar-solid">
+                    <nav className="navbar navbar-expand-md fixed-top">
+                        <Link className="navbar-brand" to="/">
+                            <Signature />
+                        </Link>
+                        <ul className="navbar-nav ml-auto">
                             {this.renderNavListItems()}
                         </ul>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </div>
         );
     }

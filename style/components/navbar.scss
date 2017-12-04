@@ -1,2 +1,37 @@
 @import "../global/_colors.scss";
 @import "../global/_fonts.scss";
+
+.navbar-solid {
+    .navbar {
+        background: white;
+        opacity: 1;
+        box-shadow: 0px 2px 10px -5px #888888;
+        transition: all 400ms linear;
+        .nav-item {
+            .nav-link {
+                color: gray;
+                &:hover {
+                    color: darkgrey;
+                }
+            }
+            &:hover {
+                border-bottom: gray 3px solid;
+            }
+            .active {
+                color: black;
+            }
+            margin: 0px 5px;
+            padding-top: 5px;
+        }
+        .active {
+            border-bottom: black 3px solid;
+            .nav-link,
+            .nav-link:hover {
+                color: black;
+            }
+            &:hover {
+                border-bottom: black 3px solid;
+            }
+        }
+    }
+}
