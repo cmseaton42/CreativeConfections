@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Waypoint from "react-waypoint";
 import { Link, NavLink } from "react-router-dom";
+import MediaQuery from "react-responsive";
 import Signature from "./signature";
+import Sidebar from "./sidebar";
 
 import "../../style/components/navbar.scss";
 
@@ -45,13 +47,25 @@ export default class Navbar extends Component {
         return (
             <div className="container-fluid cmpnt-navbar">
                 <div className="navbar-solid">
-                    <nav className="navbar navbar-expand-md fixed-top">
+                    <nav className="navbar navbar-expand-lg fixed-top">
                         <Link className="navbar-brand" to="/">
                             <Signature />
                         </Link>
-                        <ul className="navbar-nav ml-auto">
-                            {this.renderNavListItems()}
-                        </ul>
+
+                        {/* For Large Screens (e.g. Desktops) */}
+                        <MediaQuery minWidth={991}>
+                            <ul className="navbar-nav ml-auto">
+                                {this.renderNavListItems()}
+                            </ul>
+                        </MediaQuery>
+
+                        {/* For Smaller Screens (e.g. Tablets, Phones) */}
+                        <MediaQuery maxWidth={991}>
+                            <button className="btn btn-nav ml-auto">
+                                <i className="fa fa-bars" />
+                            </button>
+                            <Sidebar />
+                        </MediaQuery>
                     </nav>
                 </div>
             </div>
