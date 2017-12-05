@@ -8,10 +8,26 @@ export default class Sidebar extends Component {
     constructor() {
         super();
 
-        this.el = document.getElementById("sidebar-root");
+        this.sidebar = document.getElementById("sidebar-root");
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { isOpen } = nextProps;
+
+        this.sidebar.style.width = isOpen ? "250px" : "0";
+    }
+
+    componentWillMount() {
+        const { isOpen } = this.props;
+
+        this.sidebar.style.width = isOpen ? "250px" : "0";
+    }
+
+    componentWillUnmount() {
+        this.sidebar.style.width = "0";
     }
 
     render() {
-        return ReactDOM.createPortal(this.props.children, this.el);
+        return ReactDOM.createPortal(this.props.children, this.sidebar);
     }
 }

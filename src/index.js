@@ -7,11 +7,6 @@ import "../style/style.scss";
 import Navbar from "./components/navbar";
 
 const App = () => {
-    // <img src="https://media.giphy.com/media/xUOxffodU10EVeDwcg/giphy.gif" />
-    //         <img src="https://media.giphy.com/media/xUOxeWWsAqUbGWrcPK/giphy.gif" />
-    //         <img src="https://media.giphy.com/media/xUOxfg7tsf63xReDRe/giphy.gif" />
-    //         <img src="https://media.giphy.com/media/xUOxf7hN5NIATS3wgU/giphy.gif" />
-
     return (
         <Router>
             <Navbar />

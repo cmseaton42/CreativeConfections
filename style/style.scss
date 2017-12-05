@@ -2,6 +2,7 @@
 @import "./global/_fonts.scss";
 * {
     font-family: $ff-primary;
+    outline: none;
 }
 
 html,

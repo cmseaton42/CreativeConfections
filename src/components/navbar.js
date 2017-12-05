@@ -16,13 +16,27 @@ export default class Navbar extends Component {
                 { name: "Home", route: "/" },
                 { name: "Portfolio", route: "/Portfolio" },
                 { name: "Contact", route: "/Contact" }
-            ]
+            ],
+            sidebarOpen: false
         };
 
-        this.renderNavListItems = this.renderNavListItems.bind(this);
+        this.renderDesktopNavListItems = this.renderDesktopNavListItems.bind(
+            this
+        );
+        this.renderMobileNavListItems = this.renderMobileNavListItems.bind(
+            this
+        );
+        this.openSidebarClickHandler = this.openSidebarClickHandler.bind(this);
     }
 
-    renderNavListItems() {
+    openSidebarClickHandler(event) {
+        const { sidebarOpen } = this.state;
+        this.setState({
+            sidebarOpen: !sidebarOpen
+        });
+    }
+
+    renderDesktopNavListItems() {
         const { navListItems, Active } = this.state;
 
         return navListItems.map(listItem => {
@@ -33,12 +47,32 @@ export default class Navbar extends Component {
                     <NavLink
                         exact={name === "Home" ? true : false}
                         className="nav-link"
-                        activeClassName="nav-link-active"
+                        activeClassName="active"
                         to={route}
                     >
                         {name}
                     </NavLink>
                 </li>
+            );
+        });
+    }
+
+    renderMobileNavListItems() {
+        const { navListItems, Active } = this.state;
+
+        return navListItems.map(listItem => {
+            const { name, route } = listItem;
+
+            return (
+                <NavLink
+                    exact={name === "Home" ? true : false}
+                    className="sidebar-link"
+                    activeClassName="active"
+                    to={route}
+                    key={name}
+                >
+                    {name}
+                </NavLink>
             );
         });
     }
@@ -55,16 +89,30 @@ export default class Navbar extends Component {
                         {/* For Large Screens (e.g. Desktops) */}
                         <MediaQuery minWidth={991}>
                             <ul className="navbar-nav ml-auto">
-                                {this.renderNavListItems()}
+                                {this.renderDesktopNavListItems()}
                             </ul>
                         </MediaQuery>
 
                         {/* For Smaller Screens (e.g. Tablets, Phones) */}
                         <MediaQuery maxWidth={991}>
-                            <button className="btn btn-nav ml-auto">
+                            <button
+                                className="btn-nav ml-auto"
+                                onClick={this.openSidebarClickHandler}
+                            >
                                 <i className="fa fa-bars" />
                             </button>
-                            <Sidebar />
+                            <Sidebar
+                                isOpen={this.state.sidebarOpen}
+                                willUnmount={this.unmountingSidebar}
+                            >
+                                <button
+                                    className="btn-close ml-auto"
+                                    onClick={this.openSidebarClickHandler}
+                                >
+                                    <i className="fa fa-close" />
+                                </button>
+                                {this.renderMobileNavListItems()}
+                            </Sidebar>
                         </MediaQuery>
                     </nav>
                 </div>

@@ -1,2 +1,44 @@
 @import "../global/_colors.scss";
 @import "../global/_fonts.scss";
+#sidebar-root {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 50px;
+    right: 0;
+    background-color: $color-primary;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    .sidebar-link {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: $color-primary-tint;
+        display: block;
+        transition: 0.3s;
+        &:hover {
+            color: $color-secondary-tint;
+        }
+    }
+    .active {
+        color: $color-secondary-tint;
+    }
+    .btn-close,
+    .btn-close:focus {
+        color: $color-primary-tint;
+        position: absolute;
+        background: transparent;
+        border: none;
+        outline: none;
+        top: 55px;
+        right: 5px;
+        font-size: 25px;
+        margin-left: 50px;
+        &:hover {
+            color: $color-secondary-tint;
+            cursor: pointer
+        }
+    }
+}
