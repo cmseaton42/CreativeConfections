@@ -14,7 +14,7 @@ export default class Navbar extends Component {
         this.state = {
             navListItems: [
                 { name: "Home", route: "/" },
-                { name: "Portfolio", route: "/Portfolio" },
+                { name: "Gallery", route: "/Gallery" },
                 { name: "Contact", route: "/Contact" }
             ],
             sidebarOpen: false
