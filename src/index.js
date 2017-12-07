@@ -1,15 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "../style/vendor/animate/animate.min.scss";
 import "../style/style.scss";
 
 import Navbar from "./components/navbar";
 
+import Contact from "./views/contact";
+import Gallery from "./views/gallery";
+import Home from "./views/home";
+
 const App = () => {
     return (
         <Router>
-            <Navbar />
+            <div>
+                <Navbar />
+                <Route path="/" component={Home} exact />
+                <Route path="/Contact" component={Contact} />>
+                <Route path="/Gallery" component={Gallery} />
+            </div>
         </Router>
     );
 };
