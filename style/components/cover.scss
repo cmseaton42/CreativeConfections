@@ -1,0 +1,68 @@
+@import "../global/_colors.scss";
+@import "../global/_fonts.scss";
+@import "../mixins/_angled-edges.scss";
+.c-greeting-outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.c-greeting-inner,
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 80px;
+    p {
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+.cover {
+    /* The image used */
+    background-image: url("https://imgur.com/z5tE0me");
+    /* Full height */
+    height: 800px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: 0 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1030px) {
+    .cover {
+        height: 600px;
+        background-position: -450px -50px;
+        background-size: auto 800px;
+    }
+}
+
+@media (max-width: 790px) {
+    .c-greeting-inner,
+    h1 {
+        font-size: 40px;
+        p {
+            text-align: center;
+            font-size: 15px;
+        }
+    }
+    .cover {
+        height: 400px;
+        background-position: -200px -50px;
+        background-size: auto 600px;
+    }
+}
+
+@media (max-width: 790px) {
+    .cover {
+        height: 300px;
+        background-position: -130px -20px;
+        background-size: auto 400px;
+    }
+}

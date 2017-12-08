@@ -3,6 +3,8 @@ import Waypoint from "react-waypoint";
 import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
+import Cover from "../components/cover";
+
 export default class Home extends Component {
     constructor() {
         super();
@@ -11,7 +13,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Home Page!</h1>
+                <Cover />
             </div>
         );
     }

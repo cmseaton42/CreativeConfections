@@ -3,7 +3,7 @@ import Waypoint from "react-waypoint";
 import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
-export default class Home extends Component {
+export default class Gallery extends Component {
     constructor() {
         super();
     }
