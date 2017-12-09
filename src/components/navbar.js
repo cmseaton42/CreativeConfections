@@ -81,7 +81,7 @@ export default class Navbar extends Component {
         return (
             <div className="container-fluid cmpnt-navbar">
                 <div className="navbar-solid">
-                    <nav className="navbar navbar-expand-lg sticky-top">
+                    <nav className="navbar navbar-expand-lg fixed-top">
                         <Link className="navbar-brand" to="/">
                             <Signature />
                         </Link>

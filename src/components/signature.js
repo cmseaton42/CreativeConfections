@@ -15,12 +15,7 @@ export default class Signature extends Component {
     render() {
         return (
             <div className="cmpnt-signature">
-                <svg id="signature-svg">
-                    <text className="signature-C1">C</text>
-                    <text className="signature-reative">reative </text>
-                    <text className="signature-C2">C</text>
-                    <text className="signature-onfections">onfections</text>
-                </svg>
+                Creative Confections
             </div>
         );
     }

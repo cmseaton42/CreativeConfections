@@ -1,5 +1,6 @@
 @import "../global/_colors.scss";
 @import "../global/_fonts.scss";
+@import "../global/_mediaQuery.scss";
 .navbar-solid {
     .navbar {
         background: white;
@@ -33,9 +34,15 @@
     border: none;
     outline: none;
     padding: 0px;
-    font-size: 35px;
+    font-size: 32px;
     &:hover {
         color: $color-secondary-tint;
         cursor: pointer
+    }
+}
+
+@media (max-width: $breakpoint-phones) {
+    .btn-nav {
+        font-size: 27px;
     }
 }
