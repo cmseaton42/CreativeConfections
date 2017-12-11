@@ -14,10 +14,9 @@ export default class Cover extends Component {
             <div className="cmpnt-cover">
                 <div className="cover">
                     <div className="c-greeting-outer">
-                        <div className="c-greeting-inner">
-                            <h1 className="bold animated slideInDown">
-                                Creative Confections
-                            </h1>
+                        <div className="c-greeting-inner animated slideInDown">
+                            <p>Creative</p>
+                            <p>Confections</p>
                         </div>
                     </div>
                 </div>

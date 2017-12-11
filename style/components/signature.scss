@@ -5,25 +5,23 @@
     font-size: 40px;
     font-family: $ff-dancingScript;
     color: $color-primary;
+    text-shadow: -1px 1px 0 $color-secondary-tint;
 }
 
 @media (max-width: $breakpoint-large-tablet) {
     .cmpnt-signature {
         font-size: 40px;
-        font-family: $ff-dancingScript;
     }
 }
 
 @media (max-width: $breakpoint-med-tablet) {
     .cmpnt-signature {
         font-size: 30px;
-        font-family: $ff-dancingScript;
     }
 }
 
 @media (max-width: $breakpoint-phones) {
     .cmpnt-signature {
         font-size: 30px;
-        font-family: $ff-dancingScript;
     }
 }

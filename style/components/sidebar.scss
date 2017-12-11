@@ -1,11 +1,12 @@
-@import "../global/_colors.scss";
+    @import "../global/_colors.scss";
 @import "../global/_fonts.scss";
+@import "../global/_mediaQuery.scss";
 #sidebar-root {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1000;
-    top: 50px;
+    top: 30px;
     right: 0;
     background-color: $color-primary;
     overflow-x: hidden;
@@ -40,5 +41,11 @@
             color: $color-secondary-tint;
             cursor: pointer
         }
+    }
+}
+
+@media (max-width: $breakpoint-med-tablet) {
+    #sidebar-root {
+        top: 17px;
     }
 }
