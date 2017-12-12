@@ -6,13 +6,8 @@ const Dotenv = require("dotenv-webpack");
 const VENDOR_LIBS = [
     "react",
     "lodash",
-    "redux",
-    "react-redux",
     "react-dom",
-    "faker",
-    "react-input-range",
-    "redux-form",
-    "redux-thunk"
+    "faker"
 ];
 
 module.exports = {
