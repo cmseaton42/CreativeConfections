@@ -9,7 +9,8 @@
     "serve": "set NODE_ENV=developement && webpack-dev-server",
     "deploy": "npm run build && surge --domain www.canaanseaton.com ./dist",
     "test": "jest",
-    "test-watch": "npm test -- --watch"
+    "test-watch": "npm test -- --watch",
+    "test-coverage": "npm test -- --coverage"
   },
   "author": "",
   "license": "ISC",
