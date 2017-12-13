@@ -8,6 +8,7 @@
     "build": "set NODE_ENV=production && npm run clean && webpack -p",
     "serve": "set NODE_ENV=developement && webpack-dev-server",
     "deploy": "npm run build && surge --domain www.canaanseaton.com ./dist",
+    "deploy-temp": "npm run build && surge ./dist",
     "test": "jest",
     "test-watch": "npm test -- --watch",
     "test-coverage": "npm test -- --coverage"
