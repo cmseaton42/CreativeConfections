@@ -46,7 +46,7 @@
 @media (max-width: $breakpoint-large-tablet) {
     .cover {
         height: 600px;
-        background-position: -230px 50px;
+        background-position: -230px 0px;
         background-size: auto 800px;
         clip-path: polygon( 0 0, $breakpoint-large-tablet 0, $breakpoint-large-tablet 91%, 0 100%);
         .c-greeting-outer {
@@ -64,7 +64,7 @@
 @media (max-width: $breakpoint-med-tablet) {
     .cover {
         height: 600px;
-        background-position: -350px 50px;
+        background-position: -350px 0px;
         background-size: auto 800px;
         clip-path: polygon( 0 0, $breakpoint-med-tablet 0, $breakpoint-med-tablet 91%, 0 100%);
         .c-greeting-outer {
@@ -82,8 +82,8 @@
 @media (max-width: $breakpoint-phones) {
     .cover {
         height: 450px;
-        background-position: -130px 50px;
-        background-size: auto 400px;
+        background-position: -230px 0px;
+        background-size: auto 500px;
         clip-path: polygon( 0 0, $breakpoint-phones 0, $breakpoint-phones 91%, 0 100%);
         .c-greeting-outer {
             height: 450px;

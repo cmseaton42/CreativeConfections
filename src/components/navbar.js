@@ -17,6 +17,7 @@ export default class Navbar extends Component {
                 { name: "Gallery", route: "/Gallery" },
                 { name: "Contact", route: "/Contact" }
             ],
+            transparent: false,
             sidebarOpen: false
         };
 
@@ -26,7 +27,11 @@ export default class Navbar extends Component {
         this._renderMobileNavListItems = this._renderMobileNavListItems.bind(
             this
         );
-        this._openSidebarClickHandler = this._openSidebarClickHandler.bind(this);
+        this._openSidebarClickHandler = this._openSidebarClickHandler.bind(
+            this
+        );
+        this._handleEnter = this._handleEnter.bind(this);
+        this._handleLeave = this._handleLeave.bind(this);
     }
 
     _openSidebarClickHandler(event) {
@@ -77,6 +82,14 @@ export default class Navbar extends Component {
         });
     }
 
+    _handleEnter() {
+        this.setState({ transparent: true });
+    }
+
+    _handleLeave() {
+        this.setState({ transparent: false });
+    }
+
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
@@ -84,11 +97,22 @@ export default class Navbar extends Component {
                     onEnter={this._handleEnter}
                     onLeave={this._handleLeave}
                 />
-                <div className="navbar-solid">
+                <div
+                    className={
+                        !this.state.transparent
+                            ? "navbar-solid"
+                            : "navbar-transparent"
+                    }
+                >
                     <nav className="navbar navbar-expand-lg fixed-top">
-                        <Link className="navbar-brand" to="/">
-                            <Signature />
-                        </Link>
+                        {!this.state.transparent ? (
+                            <Link
+                                className="navbar-brand animated fadeInDown"
+                                to="/"
+                            >
+                                <Signature />
+                            </Link>
+                        ) : null}
 
                         {/* For Large Screens (e.g. Desktops) */}
                         <MediaQuery minWidth={991}>
@@ -105,10 +129,7 @@ export default class Navbar extends Component {
                             >
                                 <i className="fa fa-bars" />
                             </button>
-                            <Sidebar
-                                isOpen={this.state.sidebarOpen}
-                                willUnmount={this.unmountingSidebar}
-                            >
+                            <Sidebar isOpen={this.state.sidebarOpen}>
                                 <button
                                     className="btn-close ml-auto"
                                     onClick={this._openSidebarClickHandler}

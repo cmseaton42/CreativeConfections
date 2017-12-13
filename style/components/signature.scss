@@ -6,6 +6,7 @@
     font-family: $ff-dancingScript;
     color: $color-primary;
     text-shadow: -1px 1px 0 $color-secondary-tint;
+    line-height: 90%;
 }
 
 @media (max-width: $breakpoint-large-tablet) {
