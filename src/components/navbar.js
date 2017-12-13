@@ -20,23 +20,23 @@ export default class Navbar extends Component {
             sidebarOpen: false
         };
 
-        this.renderDesktopNavListItems = this.renderDesktopNavListItems.bind(
+        this._renderDesktopNavListItems = this._renderDesktopNavListItems.bind(
             this
         );
-        this.renderMobileNavListItems = this.renderMobileNavListItems.bind(
+        this._renderMobileNavListItems = this._renderMobileNavListItems.bind(
             this
         );
-        this.openSidebarClickHandler = this.openSidebarClickHandler.bind(this);
+        this._openSidebarClickHandler = this._openSidebarClickHandler.bind(this);
     }
 
-    openSidebarClickHandler(event) {
+    _openSidebarClickHandler(event) {
         const { sidebarOpen } = this.state;
         this.setState({
             sidebarOpen: !sidebarOpen
         });
     }
 
-    renderDesktopNavListItems() {
+    _renderDesktopNavListItems() {
         const { navListItems, Active } = this.state;
 
         return navListItems.map(listItem => {
@@ -57,7 +57,7 @@ export default class Navbar extends Component {
         });
     }
 
-    renderMobileNavListItems() {
+    _renderMobileNavListItems() {
         const { navListItems, Active } = this.state;
 
         return navListItems.map(listItem => {
@@ -80,6 +80,10 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
+                <Waypoint
+                    onEnter={this._handleEnter}
+                    onLeave={this._handleLeave}
+                />
                 <div className="navbar-solid">
                     <nav className="navbar navbar-expand-lg fixed-top">
                         <Link className="navbar-brand" to="/">
@@ -89,7 +93,7 @@ export default class Navbar extends Component {
                         {/* For Large Screens (e.g. Desktops) */}
                         <MediaQuery minWidth={991}>
                             <ul className="navbar-nav ml-auto">
-                                {this.renderDesktopNavListItems()}
+                                {this._renderDesktopNavListItems()}
                             </ul>
                         </MediaQuery>
 
@@ -97,7 +101,7 @@ export default class Navbar extends Component {
                         <MediaQuery maxWidth={991}>
                             <button
                                 className="btn-nav ml-auto"
-                                onClick={this.openSidebarClickHandler}
+                                onClick={this._openSidebarClickHandler}
                             >
                                 <i className="fa fa-bars" />
                             </button>
@@ -107,11 +111,11 @@ export default class Navbar extends Component {
                             >
                                 <button
                                     className="btn-close ml-auto"
-                                    onClick={this.openSidebarClickHandler}
+                                    onClick={this._openSidebarClickHandler}
                                 >
                                     <i className="fa fa-close" />
                                 </button>
-                                {this.renderMobileNavListItems()}
+                                {this._renderMobileNavListItems()}
                             </Sidebar>
                         </MediaQuery>
                     </nav>
