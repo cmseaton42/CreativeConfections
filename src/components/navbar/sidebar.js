@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link, NavLink } from "react-router-dom";
 
-import "../../style/components/sidebar.scss";
+import "./sidebar.scss";
 
 export default class Sidebar extends Component {
     constructor() {

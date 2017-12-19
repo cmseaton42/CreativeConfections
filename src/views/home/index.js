@@ -3,7 +3,7 @@ import Waypoint from "react-waypoint";
 import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
-import Cover from "../components/cover";
+import Cover from "./cover";
 
 export default class Home extends Component {
     constructor() {

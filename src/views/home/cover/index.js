@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Waypoint from "react-waypoint";
 import MediaQuery from "react-responsive";
 
-import "../../style/components/cover.scss";
+import "./cover.scss";
 
 export default class Cover extends Component {
     constructor() {

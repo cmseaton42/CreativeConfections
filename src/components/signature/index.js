@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Waypoint from "react-waypoint";
 
-import "../../style/components/signature.scss";
+import "./signature.scss";
 
 export default class Signature extends Component {
     constructor() {

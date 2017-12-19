@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Waypoint from "react-waypoint";
 import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
-import Signature from "./signature";
+import Signature from "../signature";
 import Sidebar from "./sidebar";
 
-import "../../style/components/navbar.scss";
+import "./navbar.scss";
 
 export default class Navbar extends Component {
     constructor() {
