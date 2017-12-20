@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
 import Cover from "./cover";
+import WeddingInfo from "./wedding-info";
 
 export default class Home extends Component {
     constructor() {
@@ -14,6 +15,7 @@ export default class Home extends Component {
         return (
             <div>
                 <Cover />
+                <WeddingInfo />
             </div>
         );
     }

@@ -34,3 +34,21 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.font-primary {
+    font-family: $ff-primary;
+}
+
+.font-cursive {
+    font-family: $ff-dancingScript;
+}
+
+.header {
+    font-size: 65px;
+    color: $color-primary;
+    text-shadow: -1px 1px 0 $color-secondary-tint;
+}
+
+.ease {
+    transition: all 500ms ease-in-out;
+}
