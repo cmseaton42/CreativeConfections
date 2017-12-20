@@ -27,6 +27,10 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                use: "json-loader",
+                test: /\.json$/
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     "style-loader",
