@@ -5,12 +5,12 @@
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1000;
-    top: 30px;
+    z-index: 2000;
+    top: 0;
     right: 0;
     background-color: $color-primary;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 10px;
     transition: 0.5s;
     .sidebar-link {
         padding: 8px 8px 8px 32px;
@@ -33,7 +33,7 @@
         background: transparent;
         border: none;
         outline: none;
-        top: 55px;
+        top: 5px;
         right: 5px;
         font-size: 25px;
         margin-left: 50px;
@@ -41,11 +41,5 @@
             color: $color-secondary-tint;
             cursor: pointer
         }
-    }
-}
-
-@media (max-width: $breakpoint-med-tablet) {
-    #sidebar-root {
-        top: 17px;
     }
 }
