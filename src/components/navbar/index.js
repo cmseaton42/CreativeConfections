@@ -21,15 +21,9 @@ export default class Navbar extends Component {
             sidebarOpen: false
         };
 
-        this._renderDesktopNavListItems = this._renderDesktopNavListItems.bind(
-            this
-        );
-        this._renderMobileNavListItems = this._renderMobileNavListItems.bind(
-            this
-        );
-        this._openSidebarClickHandler = this._openSidebarClickHandler.bind(
-            this
-        );
+        this._renderDesktopNavListItems = this._renderDesktopNavListItems.bind(this);
+        this._renderMobileNavListItems = this._renderMobileNavListItems.bind(this);
+        this._openSidebarClickHandler = this._openSidebarClickHandler.bind(this);
         this._handleEnter = this._handleEnter.bind(this);
         this._handleLeave = this._handleLeave.bind(this);
     }
@@ -83,33 +77,23 @@ export default class Navbar extends Component {
     }
 
     _handleEnter() {
-        this.setState({ transparent: true });
+        let { transparent } = this.props;
+
+        if (transparent) this.setState({ transparent: true });
     }
 
-    _handleLeave() {
+    _handleLeave() { 
         this.setState({ transparent: false });
     }
 
     render() {
         return (
             <div className="container-fluid cmpnt-navbar">
-                <Waypoint
-                    onEnter={this._handleEnter}
-                    onLeave={this._handleLeave}
-                />
-                <div
-                    className={
-                        !this.state.transparent
-                            ? "navbar-solid"
-                            : "navbar-transparent"
-                    }
-                >
+                <Waypoint onEnter={this._handleEnter} onLeave={this._handleLeave} />
+                <div className={!this.state.transparent ? "navbar-solid" : "navbar-transparent"}>
                     <nav className="navbar navbar-expand-lg fixed-top">
                         {!this.state.transparent ? (
-                            <Link
-                                className="navbar-brand animated fadeInDown"
-                                to="/"
-                            >
+                            <Link className="navbar-brand animated fadeInDown" to="/">
                                 <Signature />
                             </Link>
                         ) : null}
