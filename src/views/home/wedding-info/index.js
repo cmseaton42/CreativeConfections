@@ -16,7 +16,6 @@ export default class WeddingInfo extends Component {
     }
 
     _load() {
-        console.log('load');
         this.setState({ loaded: true });
     }
 
@@ -27,15 +26,15 @@ export default class WeddingInfo extends Component {
                     <div className="row h-100 align-items-center justify-content-center">
                         {!this.state.loaded ? null : (
                             <Fragment>
-                                <div className="col-8 col-md-6 col-lg-5 animated fadeInLeft">
+                                <div className="col-sm-6 col-md-6 col-lg-5 align-self-center animated fadeInLeft">
                                     <img
                                         src="https://i.imgur.com/MiPss1H.jpg"
                                         alt=""
-                                        className="img-fluid img-bulletin"
+                                        className="img-bulletin"
                                     />
                                 </div>
-                                <div className="col-12 col-md-6 col-lg-7 text-center animated fadeInRight">
-                                    <h1 className="font-cursive header">From Helping to Make Your Special Day Perfect</h1>
+                                <div className="col-sm-12 col-md-6 col-lg-7 text-center animated fadeInRight">
+                                    <h1 className="font-cursive header">Helping to Make Your Special Day Perfect</h1>
                                 </div>
                             </Fragment>
                         )}

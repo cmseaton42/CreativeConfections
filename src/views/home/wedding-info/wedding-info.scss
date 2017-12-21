@@ -2,5 +2,28 @@
 @import "../../../../style/global/_fonts.scss";
 @import "../../../../style/global/_mediaQuery.scss";
 .cmpnt-wedding-info {
-    padding: 40px;
+    padding: 50px;
+}
+
+.img-bulletin {
+    transform-origin: 50% 50%;
+    transform: rotateZ(3deg);
+    border-radius: 5px;
+    height: 500px;
+    width: auto;
+    padding: 6px;
+    border: 1px lightgrey solid;
+    box-shadow: 0px 2px 30px -5px black;
+}
+
+@media (max-width: $breakpoint-large-tablet) {
+    .img-bulletin {
+        height: 425px;
+    }
+}
+
+@media (max-width: $breakpoint-phones) {
+    .img-bulletin {
+        height: 350px;
+    }
 }
