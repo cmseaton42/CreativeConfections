@@ -21,12 +21,12 @@ export default class WeddingInfo extends Component {
 
     render() {
         return (
-            <Waypoint onEnter={this._load} bottomOffset={'25%'}>
+            <Waypoint onEnter={this._load} bottomOffset={'5%'}>
                 <div className="container cmpnt-wedding-info">
                     <div className="row h-100 align-items-center justify-content-center">
                         {!this.state.loaded ? null : (
                             <Fragment>
-                                <div className="col-sm-6 col-md-6 col-lg-5 align-self-center animated fadeInLeft">
+                                <div className="col-sm-6 col-md-6 col-lg-5 align-self-center text-center animated fadeInLeft">
                                     <img
                                         src="https://i.imgur.com/MiPss1H.jpg"
                                         alt=""

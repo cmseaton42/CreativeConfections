@@ -20,10 +20,13 @@
     .img-bulletin {
         height: 425px;
     }
+    .cmpnt-wedding-info {
+        padding: 30px;
+    }
 }
 
 @media (max-width: $breakpoint-phones) {
     .img-bulletin {
-        height: 350px;
+        height: 300px;
     }
 }

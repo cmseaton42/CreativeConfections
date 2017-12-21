@@ -57,12 +57,20 @@ body {
 @media (max-width: $breakpoint-large-tablet) {
     .header {
         font-size: 55px;
+        text-shadow: -1px 1px 0 $color-primary-tint;
     }
 }
 
 @media (max-width: $breakpoint-med-tablet) {
     .header {
         padding-top: 20px;
+        font-size: 45px;
+    }
+}
+
+@media (max-width: $breakpoint-phones) {
+    .header {
+        padding-top: 10px;
         font-size: 35px;
     }
 }
