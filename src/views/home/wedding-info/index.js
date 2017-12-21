@@ -21,7 +21,7 @@ export default class WeddingInfo extends Component {
 
     render() {
         return (
-            <Waypoint onEnter={this._load} bottomOffset={'10%'}>
+            <Waypoint onEnter={this._load} bottomOffset={'25%'}>
                 <div className="container cmpnt-wedding-info">
                     <div className="row h-100 align-items-center justify-content-center">
                         {!this.state.loaded ? null : (
