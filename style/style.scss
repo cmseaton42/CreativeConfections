@@ -44,6 +44,34 @@ body {
     font-family: $ff-dancingScript;
 }
 
+.color-primary {
+    color: $color-primary;
+}
+
+.color-primary-tint {
+    color: $color-primary-tint;
+}
+
+.color-accent-1 {
+    color: $color-accent-1;
+}
+
+.color-accent-2 {
+    color: $color-accent-2;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+.color-secondary-tint {
+    color: $color-secondary-tint;
+}
+
+.color-white {
+    color: white;
+}
+
 .header {
     font-size: 85px;
     color: $color-primary;

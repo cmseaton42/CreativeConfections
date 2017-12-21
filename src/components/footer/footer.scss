@@ -1,0 +1,47 @@
+@import "../../../style/global/_colors.scss";
+@import "../../../style/global/_fonts.scss";
+@import "../../../style/global/_mediaQuery.scss";
+.cmpnt-icon-footer {
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    border: white 2px solid;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: grey;
+    margin: 8px 5px;
+    transition: all 200ms ease-out;
+    &:hover {
+        transform: translateY(-3px);
+        transition: transform 200ms ease-out;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.footer-detail {
+    color: lightgrey;
+    font-size: 12px;
+    font-family: $ff-primary;
+    padding: 0px;
+    margin: 5px 0px;
+}
+
+.cmpnt-footer {
+    background-color: $color-primary-dark;
+    padding: 40px 20px;
+}
+
+.directory-container {
+    width: 10%;
+}
+
+.form-footer-contact {
+    .form-control {
+        padding: 0px;
+    }
+}

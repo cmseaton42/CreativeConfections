@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "../style/vendor/animate/animate.min.scss";
 import "../style/style.scss";
 
-import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 import Contact from "./views/contact";
 import Gallery from "./views/gallery";
@@ -17,6 +17,7 @@ const App = () => {
                 <Route path="/" component={Home} exact />
                 <Route path="/Contact" component={Contact} />
                 <Route path="/Gallery" component={Gallery} />
+                <Footer />
             </div>
         </Router>
     );
