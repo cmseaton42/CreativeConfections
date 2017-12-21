@@ -1,0 +1,46 @@
+@import "../../../../style/global/_colors.scss";
+@import "../../../../style/global/_fonts.scss";
+@import "../../../../style/global/_mediaQuery.scss";
+.cmpnt-birthday-info {
+    padding: 65px;
+    background: $color-secondary-tint;
+    clip-path: polygon(0 0, 1920px 9%, 1920px 91%, 0 100%);
+}
+
+.img-birthday {
+    transform-origin: 50% 50%;
+    transform: rotateZ(-3deg);
+    border-radius: 5px;
+    height: 480px;
+    width: auto;
+    padding: 6px;
+    background: white;
+    border: 1px lightgrey solid;
+    box-shadow: 0px 2px 30px -5px black;
+    margin: 10px;
+}
+
+@media (max-width: $breakpoint-large-tablet) {
+    .img-birthday {
+        height: 405px;
+    }
+    .cmpnt-birthday-info {
+        clip-path: polygon( 0 0, $breakpoint-large-tablet 9%, $breakpoint-large-tablet 91%, 0 100%);
+        padding: 45px;
+    }
+}
+
+@media (max-width: $breakpoint-med-tablet) {
+    .cmpnt-birthday-info {
+        clip-path: polygon( 0 0, $breakpoint-med-tablet 9%, $breakpoint-med-tablet 91%, 0 100%);
+    }
+}
+
+@media (max-width: $breakpoint-phones) {
+    .img-birthday {
+        height: 280px;
+    }
+    .cmpnt-birthday-info {
+        clip-path: polygon( 0 0, $breakpoint-phones 9%, $breakpoint-phones 91%, 0 100%);
+    }
+}

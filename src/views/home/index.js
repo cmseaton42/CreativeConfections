@@ -7,6 +7,7 @@ import Navbar from "../../components/navbar";
 
 import Cover from "./cover";
 import WeddingInfo from "./wedding-info";
+import BirthdayInfo from "./birthday-info";
 
 export default class Home extends Component {
     constructor() {
@@ -19,6 +20,7 @@ export default class Home extends Component {
                 <Navbar transparent={true} />
                 <Cover />
                 <WeddingInfo />
+                <BirthdayInfo />
             </div>
         );
     }

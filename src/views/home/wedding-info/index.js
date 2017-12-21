@@ -21,7 +21,7 @@ export default class WeddingInfo extends Component {
 
     render() {
         return (
-            <Waypoint onEnter={this._load} bottomOffset={'5%'}>
+            <Waypoint onEnter={this._load} bottomOffset={'15%'}>
                 <div className="container cmpnt-wedding-info">
                     <div className="row h-100 align-items-center justify-content-center">
                         {!this.state.loaded ? null : (
@@ -30,7 +30,7 @@ export default class WeddingInfo extends Component {
                                     <img
                                         src="https://i.imgur.com/MiPss1H.jpg"
                                         alt=""
-                                        className="img-bulletin"
+                                        className="img-wedding"
                                     />
                                 </div>
                                 <div className="col-sm-12 col-md-6 col-lg-7 text-center animated fadeInRight">
