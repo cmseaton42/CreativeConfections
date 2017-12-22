@@ -34,6 +34,7 @@
     "react-router-bootstrap": "latest",
     "react-router-dom": "latest",
     "react-slick": "^0.14.11",
+    "react-transition-group": "^2.2.1",
     "react-waypoint": "latest",
     "validator": "^8.0.0"
   },
