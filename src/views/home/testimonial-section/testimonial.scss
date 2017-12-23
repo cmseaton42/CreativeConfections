@@ -1,0 +1,65 @@
+@import "../../../../style/global/_colors.scss";
+@import "../../../../style/global/_fonts.scss";
+@import "../../../../style/global/_mediaQuery.scss";
+.img-testimonial-wrapper {
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: white 5px solid;
+    box-shadow: 0px 2px 30px -5px black;
+    .img-testimonial {
+        width: 250px;
+        height: auto;
+        z-index: 5;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+.comment-wrapper {
+    z-index: 100;
+    .testimonial-text {
+        font-size: 22px;
+        color: $color-primary;
+        padding: 0px;
+        margin: 0px;
+        i {
+            font-size: 20px;
+        }
+    }
+    .testimonial-signature {
+        font-size: 30px;
+        padding: 0px;
+        margin: 0px;
+        color: $color-primary-tint;
+    }
+}
+
+.testimonial-wrapper {
+    margin: 35px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel-enter {
+    opacity: 0.01;
+}
+
+.carousel-enter.carousel-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+.carousel-exit {
+    opacity: 1;
+}
+
+.carousel-exit.carousel-exit-active {
+    opacity: 0.01;
+    display: none;
+    transition: opacity 800ms ease-in;
+}

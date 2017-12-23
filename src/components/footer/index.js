@@ -69,7 +69,7 @@ export default class Footer extends Component {
                             mauris semper bibendum.
                         </p>
                     </div>
-                    <div className="col-sm-12 col-md-1 col-lg-2 text-center">
+                    <div className="col-sm-12 col-md-2 col-lg-1 text-center">
                         <div className="directory-container">
                             <h5 className="font-primary color-white font-weight-bold">
                                 DIRECTORY

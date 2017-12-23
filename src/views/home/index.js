@@ -8,6 +8,7 @@ import Navbar from "../../components/navbar";
 import Cover from "./cover";
 import WeddingInfo from "./wedding-info";
 import BirthdayInfo from "./birthday-info";
+import Testimonial from "./testimonial-section";
 
 export default class Home extends Component {
     constructor() {
@@ -21,6 +22,7 @@ export default class Home extends Component {
                 <Cover />
                 <WeddingInfo />
                 <BirthdayInfo />
+                <Testimonial />
             </div>
         );
     }
