@@ -5,6 +5,8 @@ import MediaQuery from "react-responsive";
 
 import Navbar from "../../components/navbar";
 
+import Portfolio from "./portfolio";
+
 export default class Gallery extends Component {
     constructor() {
         super();
@@ -14,7 +16,7 @@ export default class Gallery extends Component {
         return (
             <div>
                 <Navbar transparent={false} />
-                <h1>Gallery Page!</h1>
+                <Portfolio />
             </div>
         );
     }
