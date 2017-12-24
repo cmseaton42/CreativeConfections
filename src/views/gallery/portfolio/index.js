@@ -11,13 +11,8 @@ export default class Portfolio extends Component {
 
         this.state = {
             images: imageList.images,
-            menu: [
-                { active: true, option: "All" },
-                { active: false, option: "Wedding" },
-                { active: false, option: "Birthday" },
-                { active: false, option: "Event" },
-                { active: false, option: "Etc" }
-            ]
+            menu: ["All", "Wedding", "Birthday", "Event"],
+            active: "All"
         };
 
         this._renderImages = this._renderImages.bind(this);
@@ -25,21 +20,39 @@ export default class Portfolio extends Component {
     }
 
     _renderImages() {
-        const { images } = this.state;
+        const { images, active } = this.state;
 
-        return imageList.map(image => {
-            return <li className="nav-item" />;
-        });
+        return images
+            .filter(image => {
+                const { url, tag } = image;
+                if (active == "All") return true;
+                return tag.includes(active);
+            })
+            .map(image => {
+                const { url, tag } = image;
+                return (
+                    <div key={url} className="col-6 col-sm-4 col-md-3 col-lg-2 dflex justify-content-center">
+                        <div onClick={() => console.log(url) } className="img-portfolio-wrapper">
+                            <img src={url} alt="Gallery Image" className="img-portfolio" />
+                        </div>
+                    </div>
+                );
+            });
     }
 
     _renderMenu() {
-        const { menu } = this.state;
+        const { menu, active } = this.state;
 
-        return menu.map(item => {
+        return menu.map((item, i) => {
             return (
-                <li key={ menu.option } className={`nav-item menu-option ${item.active ? "active" : ""}`}>
-                    <button onClick className="btn btn-primary">
-                        { menu.option }
+                <li key={item} className="nav-item menu-option">
+                    <button
+                        onClick={() => {
+                            this.setState({ active: item });
+                        }}
+                        className={`btn-menu ${active == item ? "active" : ""}`}
+                    >
+                        {item}
                     </button>
                 </li>
             );
@@ -50,9 +63,11 @@ export default class Portfolio extends Component {
         return (
             <div className="cmpnt-portfolio container-fluid">
                 <div className="spacer-nav" />
-                <ul className="nav menu"> 
-                    { this._renderMenu() }
-                </ul>
+                <div className="row align-items-center justify-content-center">
+                    <ul className="nav menu text-center">{this._renderMenu()}</ul>
+                </div>
+                <FlipMove className="row justify-content-center">{this._renderImages()}</FlipMove>
+                <div className="spacer-nav" />
             </div>
         );
     }
