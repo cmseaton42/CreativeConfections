@@ -13,7 +13,7 @@ import Home from "./views/home";
 const App = () => {
     return <Router>
             <div>
-                <Route path="/" component={Gallery} exact />
+                <Route path="/" component={Home} exact />
                 <Route path="/Contact" component={Contact} />
                 <Route path="/Gallery" component={Gallery} />
                 <Footer />
