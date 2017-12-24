@@ -11,14 +11,16 @@ import Gallery from "./views/gallery";
 import Home from "./views/home";
 
 const App = () => {
-    return <Router>
+    return (
+        <Router>
             <div>
-                <Route path="/" component={Home} exact />
+                <Route path="/" component={Contact} exact />
                 <Route path="/Contact" component={Contact} />
                 <Route path="/Gallery" component={Gallery} />
                 <Footer />
             </div>
-        </Router>;
+        </Router>
+    );
 };
 
 // Preload and then mount App

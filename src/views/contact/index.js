@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import MediaQuery from "react-responsive";
 
 import Navbar from "../../components/navbar";
+import Connect from "./connect";
 export default class Contact extends Component {
     constructor() {
         super();
@@ -13,7 +14,8 @@ export default class Contact extends Component {
         return (
             <div>
                 <Navbar transparent={false} />
-                <h1>Contact Page!</h1>
+                <div className="spacer-nav" />
+                <Connect />
             </div>
         );
     }

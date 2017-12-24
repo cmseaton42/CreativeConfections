@@ -1,0 +1,144 @@
+@import "../../../../style/global/_colors.scss";
+@import "../../../../style/global/_fonts.scss";
+@import "../../../../style/global/_mediaQuery.scss";
+.cmpnt-contact {
+    padding: 30px 10px;
+}
+
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+    .map {
+        height: 400px;
+        width: 100%;
+        padding: 0px;
+        box-shadow: 5px 10px 35px -5px black;
+    }
+}
+
+.contact-header {
+    display: inline-block;
+    color: $color-primary;
+    font-size: 55px;
+    font-family: $ff-primary;
+}
+
+.form-control {
+    border-radius: 2px;
+    &:focus {
+        border-color: $color-primary;
+    }
+    &-feedback {
+        font-family: $ff-primary;
+        padding: 0px 20px;
+        margin: 2px 0px;
+        color: $color-primary;
+        font-size: 14px;
+    }
+    &-sending {
+        font-family: $ff-primary;
+        padding: 0px 20px;
+        margin: 2px 0px;
+        color: $color-primary;
+        font-size: 20px;
+        font-weight: bold;
+        animation-duration: 3000ms;
+    }
+}
+
+.form-group {
+    position: relative;
+    .fa-check {
+        position: absolute;
+        color: #5cb85c;
+        font-size: 25px;
+        top: 6px;
+        right: 8px;
+    }
+    .fa-times {
+        position: absolute;
+        color: $color-primary;
+        font-size: 25px;
+        top: 6px;
+        right: 8px;
+    }
+}
+
+.btn-custom {
+    border-radius: 2px;
+    border: $color-primary 2px solid;
+    font-family: $ff-dancingScript;
+    font-weight: bold;
+    background: white;
+    color: $color-primary;
+    &:hover {
+        border: $color-primary 2px solid;
+        color: white;
+        background: $color-primary;
+        cursor: pointer;
+    }
+    &:active:focus,
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.contact-form-wrapper {
+    position: relative;
+}
+
+.contact-modal {
+    width: 300px;
+    height: 200px;
+    background: $color-primary;
+    box-shadow: 5px 10px 35px -5px black;
+    position: absolute;
+    right: calc(50% - 150px);
+    top: calc(50% - 100px);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-content {
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-family: Play;
+        font-size: 30px;
+        position: relative;
+        .contact-modal-close {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            color: white;
+            font-size: 30px;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.15);
+                transition: transform 200ms ease-in-out;
+            }
+        }
+        .fa-thumbs-up {
+            padding-top: 20px;
+            font-size: 50px;
+        }
+        .fa-thumbs-down {
+            padding-top: 20px;
+            font-size: 50px;
+        }
+    }
+}
+
+@media (max-width: 790px) {
+    .contact-header {
+        font-size: 35px;
+        margin-top: 15px;
+    }
+    .map-wrapper {
+        .map {
+            height: 300px;
+            max-width: 500px;
+            box-shadow: 5px 10px 45px -15px black;
+        }
+    }
+}
