@@ -129,7 +129,7 @@
     }
 }
 
-@media (max-width: 790px) {
+@media (max-width: $breakpoint-large-tablet) {
     .contact-header {
         font-size: 35px;
         margin-top: 15px;

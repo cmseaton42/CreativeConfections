@@ -13,7 +13,7 @@ export default class Connect extends Component {
         this.state = {
             map_data: {
                 center: {
-                    lat: 37.975188,
+                    lat: 37.821657,
                     lng: -87.567486
                 },
                 zoom: 10,
@@ -92,10 +92,6 @@ export default class Connect extends Component {
 
             this.setState({ form });
         }
-    }
-
-    componentDidMount() {
-        emailjs.init("user_295FARgMiuDiHKWrrkZIQ");
     }
 
     _submitHandler(event) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "../style/vendor/animate/animate.min.scss";
@@ -10,17 +10,27 @@ import Contact from "./views/contact";
 import Gallery from "./views/gallery";
 import Home from "./views/home";
 
-const App = () => {
-    return (
-        <Router>
-            <div>
-                <Route path="/" component={Contact} exact />
-                <Route path="/Contact" component={Contact} />
-                <Route path="/Gallery" component={Gallery} />
-                <Footer />
-            </div>
-        </Router>
-    );
+class App extends Component {
+    constructor() {
+        super();
+    }
+
+    componentDidMount() {
+        emailjs.init(process.env.EMAILJS_USER_ID);
+    }
+
+    render() {
+        return (
+            <Router>
+                <div>
+                    <Route path="/" component={Home} exact />
+                    <Route path="/Contact" component={Contact} />
+                    <Route path="/Gallery" component={Gallery} />
+                    <Footer />
+                </div>
+            </Router>
+        );
+    }
 };
 
 // Preload and then mount App

@@ -8,10 +8,15 @@ export default class Footer extends Component {
     constructor() {
         super();
 
-        this.state = { email: "", valid: false, sending: false };
+        this.state = { email: "", valid: false, sending: false, message: "", sending: false };
 
         this._emailChange = this._emailChange.bind(this);
         this._onSubmit = this._onSubmit.bind(this);
+        this._sendEmail = this._sendEmail.bind(this);
+    }
+
+    componentDidMount() {
+        emailjs.init(process.env.EMAILJS_USER_ID);
     }
 
     _emailChange(event) {
@@ -22,32 +27,78 @@ export default class Footer extends Component {
 
             if (validator.isEmail(email)) valid = true;
 
-            this.setState({ email, value });
+            this.setState({ email, valid });
         }
+    }
+
+    _sendEmail(cb) {
+        emailjs
+            .send("gmail", "contact_form", {
+                email: this.state.email,
+                name: "Mailing List Request",
+                message: "Requested to be added to mailing list."
+            })
+            .then(
+                response => {
+                    cb(true);
+                },
+                err => {
+                    cb(false);
+                }
+            );
     }
 
     _onSubmit(event) {
         event.preventDefault();
+        const { email, valid } = this.state;
 
-        console.log("click");
+        if (!valid) {
+            this.setState({
+                message: "Please Enter a Valid Email Address"
+            });
+        } else {
+            this.setState({ sending: true });
+            this._sendEmail(status => {
+                let message =
+                    status == true
+                        ? "Thanks for reaching out! =]"
+                        : "Something went wrong. Try again later.";
+                let email = status == true ? "" : this.state.email;
+                const sending = false;
+
+                this.setState({ email, message, sending });
+            });
+        }
     }
 
     render() {
-        const { email } = this.state;
+        const { email, message } = this.state;
 
-        return <div className="cmpnt-footer container-fluid">
+        return (
+            <div className="cmpnt-footer container-fluid">
                 <div className="row justify-content-center">
                     <div className="col-sm-12 col-md-4 col-lg-3">
                         <h5 className="font-primary color-white font-weight-bold">
                             STAY CONNECTED
                         </h5>
                         <p className="footer-detail">
-                            I am proud to invite you to join my mailing list so that we can
-                            keep in touch.
+                            I am proud to invite you to join my mailing list so that we can keep in
+                            touch.
                         </p>
                         <form onSubmit={this._onSubmit} className="form-footer-contact">
+                            {message === "" ? null : <p className="footer-message">{message}</p>}
                             <div className="form-control">
-                                <input className="form-control" id="name" type="text" placeholder="Email Address" onChange={this._emailChange} value={email} />
+                                <input
+                                    className="form-control"
+                                    id="name"
+                                    type="text"
+                                    placeholder="Email Address"
+                                    onChange={this._emailChange}
+                                    value={email}
+                                />
+                                {this.state.sending == true ? (
+                                    <i className="fa fa-spinner footer-spinner" />
+                                ) : null}
                             </div>
                         </form>
                         <div>
@@ -62,18 +113,15 @@ export default class Footer extends Component {
                             MISSION STATEMENT
                         </h5>
                         <p className="footer-detail">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                            tortor metus, dignissim consectetur volutpat a, volutpat id
-                            risus. Maecenas bibendum suscipit leo rhoncus porttitor. Fusce
-                            accumsan porta felis in elementum. Nulla gravida dolor convallis
-                            mauris semper bibendum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor
+                            metus, dignissim consectetur volutpat a, volutpat id risus. Maecenas
+                            bibendum suscipit leo rhoncus porttitor. Fusce accumsan porta felis in
+                            elementum. Nulla gravida dolor convallis mauris semper bibendum.
                         </p>
                     </div>
                     <div className="col-sm-12 col-md-2 col-lg-1 text-center">
                         <div className="directory-container">
-                            <h5 className="font-primary color-white font-weight-bold">
-                                DIRECTORY
-                            </h5>
+                            <h5 className="font-primary color-white font-weight-bold">DIRECTORY</h5>
                             <ul className="nav flex-column directory text-left">
                                 <li className="nav-item">
                                     <Link to="/">Home</Link>
@@ -88,7 +136,8 @@ export default class Footer extends Component {
                         </div>
                     </div>
                 </div>
-            </div>;
+            </div>
+        );
     }
 }
 
