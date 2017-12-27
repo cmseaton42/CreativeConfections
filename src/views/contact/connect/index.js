@@ -239,7 +239,7 @@ export default class Connect extends Component {
                                         </div>
                                     )}
                                     {this.state.message_sent
-                                        ? "Success! I will get back you to ASAP!"
+                                        ? "Success! I will get back to you ASAP!"
                                         : "Whoops! Looks like something went wrong."}
                                 </div>
                             </div>
