@@ -12,35 +12,17 @@ export default class Connect extends Component {
 
         this.state = {
             map_data: {
-                center: {
-                    lat: 37.821657,
-                    lng: -87.567486
-                },
+                center: { lat: 37.819502, lng: -88.929691 },
                 zoom: 10,
-                marker: {
-                    position: {
-                        lat: 37.975188,
-                        lng: -87.567486
-                    },
-                    defaultAnimation: 2
-                }
+                marker: { position: { lat: 37.819502, lng: -88.929691 }, defaultAnimation: 2 }
             },
             message_sent: false,
             show_modal: false,
             sending: false,
             form: {
-                name: {
-                    value: "",
-                    isValid: false
-                },
-                email: {
-                    value: "",
-                    isValid: false
-                },
-                message: {
-                    value: "",
-                    isValid: true
-                }
+                name: { value: "", isValid: false },
+                email: { value: "", isValid: false },
+                message: { value: "", isValid: true }
             }
         };
 
